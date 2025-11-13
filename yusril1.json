@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car GPS Tracking</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.3.7/mqtt.min.js"></script>
+    <style>
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([-7.23177, 112.72837], 15); // Initial view at the first GPS point
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Define a custom car icon
+        const carIcon = L.icon({
+            
+			      iconUrl: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgH2Z-wk4HF2585cfK3xPhHjW5OAzUXJHUCCCHttErcaMdndDSq5IZ03BpRQarxbHHULHcjV4SYg7GN747GKTN94tUP9VMpLO4NwD3rBU6dFKsbVTkArl6ZwQfIELXlITKcFDORbiJI2DBOX-MjK1CPAAo0D47xSxDeoTvtuBmIQfqj5vuJq8xmPmsx-HHs/s1600/bus.png',
+            iconSize: [20, 38], // Size of the icon (width, height)
+            iconAnchor: [19, 19], // Point of the icon which corresponds to the marker's location
+        });
+
+        // Marker for the car
+        let carMarker = null;
+
+        // Array to store the trail points
+        const trailPoints = [];
+
+        // Polyline for the trail
+        const trailLine = L.polyline(trailPoints, { color: 'blue' }).addTo(map);
+
+        // MQTT Client Setup
+        // GANTI PAKE AKUN MQTT, ini contoh gratis
+		//#const client = mqtt.connect('wss://test.mosquitto.org:8081/mqtt', {
+		const client = mqtt.connect('wss://broker.hivemq.com:8884/mqtt', {	
+		username: '', // kalau ada di isi
+		password: '', // kalau ada di isi
+		protocol: 'wss', // Ensure WebSocket Secure (WSS) is used
+		rejectUnauthorized: true // Optional: Set to false if using self-signed certificates (not recommended for production)
+});
+        client.on('connect', () => {
+            console.log('Connected to MQTT broker'); 
+            client.subscribe('Innova Reborn', (err) => { //<<<<<<<<UBAH TOPIK INI 'car/gps'
+                if (!err) {
+                    console.log('Subscribed to Innova Reborn topic');
+                }
+            });
+        });
+
+        // Handle incoming GPS data
+        client.on('message', (topic, message) => {
+            const data = JSON.parse(message.toString());
+            const { latitude, longitude } = data;
+
+            console.log(`Received GPS data: Latitude=${latitude}, Longitude=${longitude}`);
+
+            // Add the new point to the trail
+            trailPoints.push([latitude, longitude]);
+
+            // Update the trail polyline
+            trailLine.setLatLngs(trailPoints);
+
+            // Update the car marker position
+            if (carMarker) {
+                carMarker.setLatLng([latitude, longitude]);
+            } else {
+                carMarker = L.marker([latitude, longitude], { icon: carIcon }).addTo(map);
+            }
+
+            // Center the map on the car's position
+            map.setView([latitude, longitude], 15);
+        });
+    </script>
+</body>
+</html>
