@@ -2,86 +2,107 @@
     {
         "latitude": -7.31189,
         "longitude": 112.72663
+        "Kecepatan": 30
     },
     {
         "latitude": -7.31196,
         "longitude": 112.72686
+        "Kecepatan": 50
     },
     {
         "latitude": -7.31199,
         "longitude": 112.72692
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31205,
         "longitude": 112.72694
+        "Kecepatan": 60
     },
     {
         "latitude": -7.31219,
         "longitude": 112.72689
+        "Kecepatan": 50
     },
     {
         "latitude": -7.31225,
         "longitude": 112.72705
+        "Kecepatan": 50
     },
     {
         "latitude": -7.31249,
         "longitude": 112.72771
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31281,
         "longitude": 112.72855
+        "Kecepatan": 30
     },
     {
         "latitude": -7.31288,
         "longitude": 112.72876
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31289,
         "longitude": 112.7288
+        "Kecepatan": 20
     },
     {
         "latitude": -7.31288,
         "longitude": 112.72883
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31287,
         "longitude": 112.72885
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31272,
         "longitude": 112.72891
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31242,
         "longitude": 112.72903
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31196,
         "longitude": 112.72918
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31155,
         "longitude": 112.72933
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31129,
         "longitude": 112.72943
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31072,
         "longitude": 112.72963
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31054,
         "longitude": 112.7297
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31015,
         "longitude": 112.72985
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31007,
         "longitude": 112.72988
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31005,
@@ -102,6 +123,7 @@
     {
         "latitude": -7.30933,
         "longitude": 112.72792
+        "Kecepatan": 40
     },
     {
         "latitude": -7.30924,
@@ -138,6 +160,7 @@
     {
         "latitude": -7.30817,
         "longitude": 112.72565
+        "Kecepatan": 40
     },
     {
         "latitude": -7.30817,
@@ -190,6 +213,7 @@
     {
         "latitude": -7.30888,
         "longitude": 112.72155
+        "Kecepatan": 40
     },
     {
         "latitude": -7.30889,
@@ -226,6 +250,7 @@
     {
         "latitude": -7.30903,
         "longitude": 112.71965
+        "Kecepatan": 40
     },
     {
         "latitude": -7.30907,
@@ -330,6 +355,7 @@
     {
         "latitude": -7.31167,
         "longitude": 112.71228
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31212,
@@ -394,6 +420,7 @@
     {
         "latitude": -7.31897,
         "longitude": 112.71173
+        "Kecepatan": 40
     },
     {
         "latitude": -7.31928,
@@ -450,6 +477,7 @@
     {
         "latitude": -7.32567,
         "longitude": 112.71071
+        "Kecepatan": 40
     },
     {
         "latitude": -7.32617,
@@ -494,6 +522,7 @@
     {
         "latitude": -7.32773,
         "longitude": 112.71075
+        "Kecepatan": 40
     },
     {
         "latitude": -7.32797,
@@ -566,6 +595,7 @@
     {
         "latitude": -7.33276,
         "longitude": 112.7103
+        "Kecepatan": 40
     },
     {
         "latitude": -7.33283,
@@ -674,6 +704,7 @@
     {
         "latitude": -7.33732,
         "longitude": 112.7132
+        "Kecepatan": 40
     },
     {
         "latitude": -7.33735,
@@ -682,9 +713,11 @@
     {
         "latitude": -7.33737,
         "longitude": 112.71315
+        "Kecepatan": 0
     },
     {
         "latitude": -7.33863,
         "longitude": 112.71275
     }
+
 ]
